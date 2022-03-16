@@ -1,0 +1,246 @@
+/******https://github.com/Labush/JS******/
+body {
+  margin: 0;
+  font-family: "Khand", sans-serif !important;
+  overflow-x: hidden;
+}
+.menu_liens {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1.7px;
+  font-size: 24px;
+  font-weight: lighter !important;
+  transition-duration: 0.4s !important;
+}
+.menu_liens:hover {
+  color: #bca0c6;
+  text-decoration: underline;
+  text-decoration-thickness: 10px;
+  text-underline-offset: -1px;
+  transition-duration: 0.4s !important;
+}
+li {
+  margin-top: 15px;
+}
+ul {
+  list-style-type: none;
+}
+header {
+  background: #f6eded;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+/* #titre {
+  color: #bca0c6;
+  letter-spacing: 1.6px;
+  margin-right: 590px;
+  font-weight: bold !important;
+  font-size: 55px;
+  margin-bottom: 0px;
+} */
+
+nav {
+  background: #222;
+  z-index: 0;
+  top: 0;
+  padding: 20px;
+  padding-top: 80px;
+  height: 100%;
+  box-sizing: border-box;
+  width: 235px;
+  left: -200px;
+  position: absolute;
+}
+
+#rs {
+  margin-top: 300px;
+  margin-left: 16% !important;
+}
+
+.burger {
+  z-index: 1;
+  display: relative;
+  cursor: pointer;
+}
+.burger span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: #bca0c6;
+  margin-bottom: 5px;
+}
+
+nav.open {
+  left: 0;
+}
+.burger.open span:nth-child(1) {
+  transform: rotate(41deg) translateY(11px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-41deg) translateY(-11px);
+}
+
+nav {
+  transition: left ease-in 0.4s;
+}
+.burger span {
+  transition: all ease-in 0.4s;
+}
+
+.main {
+  background-image: url("img/background.jpg");
+  background-size: 100%;
+  width: 100%;
+  height: 675px;
+  /* cursor: pointer; */
+  margin-left: 0;
+  border-bottom: solid 5px black;
+}
+#accueil {
+  text-align: center !important;
+  padding-top: 450px;
+}
+#call_command {
+  font-size: 28px;
+  letter-spacing: 1.5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 100px !important;
+  background-color: #f6eded !important;
+  color: black;
+  margin-top: 50px;
+}
+#call_command:hover {
+  background-color: #bca0c6 !important;
+  color: white !important;
+}
+#soustitre {
+  font-weight: bold;
+  color: white;
+  font-size: 45px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  float: right;
+  margin-right: 17%;
+  margin-top: 70px;
+  letter-spacing: 2.3px;
+}
+#soustitre_shadow {
+  letter-spacing: 2.3px;
+  font-weight: bold;
+  color: #bca0c6;
+  font-size: 45px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+  float: right;
+  margin-right: -266px !important;
+  margin-top: 70px;
+}
+#about {
+  background-color: #f6eded;
+  height: 500px;
+}
+#img_avocat {
+  margin: 85px;
+  margin-left: 175px;
+}
+#pres {
+  float: right;
+  margin-top: 90px;
+  margin-right: 250px;
+  color: #bca0c6;
+  letter-spacing: 1.1px;
+  font-size: 50px;
+}
+#pres_para {
+  float: right;
+  margin-top: -300px;
+  margin-right: 70px;
+  width: 600px;
+  font-size: 22px;
+  color: black;
+}
+/****/
+.content_menu {
+  height: 1100px;
+}
+#menu_titre {
+  color: black;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 70px;
+}
+.card-title {
+  text-align: center !important;
+  font-weight: bold;
+  font-size: 27px !important;
+}
+.prix_rounded {
+  background-color: #bca0c6;
+  color: #f6eded;
+  border: solid 7px #f6eded;
+  border-radius: 100px;
+  width: 90px;
+  height: 90px;
+  padding-top: 19px;
+  text-align: center;
+  margin-left: 10.5%;
+  letter-spacing: 1px;
+  font-size: 22px;
+
+  margin-top: -50px;
+  z-index: 1 !important;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.card-img-top {
+  height: 280px !important;
+}
+.carte {
+  margin-bottom: 50px;
+  margin-top: 70px !important;
+  margin-left: 4.5% !important;
+  float: left;
+
+  width: 400px !important;
+  padding: 0 !important;
+  color: black !important;
+  font-size: 130% !important;
+  background-color: #f6eded !important;
+}
+#app {
+  margin-top: -35px;
+}
+#img {
+  float: right;
+  margin-top: 75px;
+  margin-right: 125px;
+}
+
+#newsletter {
+  float: left;
+  margin-left: 130px;
+  margin-top: 250px;
+}
+input {
+  border-radius: 15px;
+  width: 300px;
+  height: 35px;
+  border: solid 3px #bca0c6;
+}
+#titre_newsletter {
+  font-size: 30px;
+}
+#btn_newsletter {
+  margin-left: 170px !important;
+  font-size: 22px !important;
+}

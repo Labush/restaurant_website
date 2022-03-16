@@ -1,0 +1,97 @@
+#bg-left {
+  background-color: #f6eded;
+  width: 50%;
+  height: 720px;
+}
+
+#bg-right {
+  width: 50%;
+  height: 720px;
+  margin-left: 50%;
+  margin-top: -720px;
+  background-color: white;
+}
+/*********/
+.login-form {
+  background: #ce6d6d;
+  padding: 30px;
+
+  height: 550px;
+  width: 480px;
+  box-shadow: 14px -12px #bca0c6;
+
+  margin-left: 34%;
+  margin-top: -635px;
+}
+#connect {
+  color: white;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-left: 32px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 4px;
+  text-decoration-color: #bca0c6;
+  font-family: "Alata", sans-serif;
+
+  margin-top: 45px;
+  margin-bottom: 75px;
+}
+.form-group {
+  margin-bottom: 40px;
+  margin-left: 36px;
+  width: 320px;
+}
+
+.form-control {
+  background-color: #ce6d6d;
+  border: none;
+  border-bottom: solid 3px white;
+}
+.label-log {
+  margin-bottom: 10px;
+  margin-left: 2px;
+
+  color: #f3caca;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Alata", sans-serif;
+  font-size: 13px;
+}
+.fa-caret-right {
+  color: white !important;
+}
+.btn {
+  margin-top: 60px;
+  background-color: #bca0c6;
+  color: white;
+  letter-spacing: 2px;
+  font-family: "Alata", sans-serif;
+  font-size: 19px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 1px;
+}
+
+/*****/
+
+#redirect_inscription {
+  float: right;
+  margin-top: -114px;
+
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-left: 41px;
+  font-family: "Alata", sans-serif;
+
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 4px;
+  text-decoration-color: #ce6d6d;
+
+  background-color: #bca0c6;
+  padding: 22px;
+}
