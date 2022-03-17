@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="NoS1gnal" />
 
     <!----MDBOOSTRAP------->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -18,7 +17,7 @@
 
 
     <title>Connexion</title>
-    <link rel="stylesheet" href="style_php.css">
+    <link rel="stylesheet" href="connexion.css">
 </head>
 
 <body>
@@ -26,45 +25,46 @@
     <div id="bg-right"></div>
 
     <div class="login-form">
-        <?php
-        if (isset($_GET['login_err'])) {
-            $err = htmlspecialchars($_GET['login_err']);
 
-            switch ($err) {
-                case 'password':
-        ?>
-                    <div class="alert alert-danger">
-                        <strong>Erreur</strong> mot de passe incorrect
-                    </div>
-                <?php
-                    break;
+        <div class="danger-pop">
+            <?php
+            if (isset($_GET['login_err'])) {
+                $err = htmlspecialchars($_GET['login_err']);
 
-                case 'email':
-                ?>
-                    <div class="alert alert-danger">
-                        <strong>Erreur</strong> email incorrect
-                    </div>
-                <?php
-                    break;
+                switch ($err) {
+                    case 'password':
+            ?>
+                        <div class="alert alert-danger">
+                            <strong>Oups !</strong> Votre mot de passe est incorrect.
+                        </div>
+                    <?php
+                        break;
 
-                case 'already':
-                ?>
-                    <div class="alert alert-danger">
-                        <strong>Erreur</strong> compte non existant
-                    </div>
-        <?php
-                    break;
+                    case 'email':
+                    ?>
+                        <div class="alert alert-danger">
+                            <strong>Oups !</strong> Votre adresse e-mail est incorrecte.
+                        </div>
+                    <?php
+                        break;
+
+                    case 'already':
+                    ?>
+                        <div class="alert alert-danger">
+                            <strong>Oups !</strong> Votre adresse e-mail est incorrecte.
+                        </div>
+            <?php
+                        break;
+                }
             }
-        }
-        ?>
-
-
+            ?>
+        </div>
 
         <form action="connexion.php" method="post">
             <h2 id="connect">Se connecter</h2>
-            <!-- <a href=" inscription.php"> -->
-            <h2 id="redirect_inscription" style="cursor: pointer;"><i class="fas fa-caret-right"></i> Inscription</h2>
-            <!-- </a> -->
+            <a href=" inscription.php">
+                <h2 id="redirect_inscription" style="cursor: pointer;"><i class="fas fa-caret-right"></i> S'inscrire</h2>
+            </a>
             <div class="form-group">
                 <label class="label-log" for=""><i class="fas fa-caret-right"></i> Adresse e-mail</label>
                 <input type="email" name="email" class="form-control" required="required" autocomplete="off">
@@ -74,7 +74,9 @@
                 <input type="password" name="password" class="form-control" required="required" autocomplete="off">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-outline btn-block">Connexion</button>
+                <a href="" type="submit">
+                    <button type="submit" class="btn btn-outline btn-block">Connexion</button>
+                </a>
             </div>
         </form>
     </div>
