@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'config.php';
-// si la session existe pas soit si l'on est pas connecté on redirige
+// redirection vers index.php si essai d'accès à landing sans être connecté
 if (!isset($_SESSION['user'])) {
     header('Location:index.php');
     die();
@@ -44,12 +44,53 @@ $data = $req->fetch();
             Changer mon mot de passe
         </button>
     </div> -->
+
     <div class="menu">
         <header>
-            <div id="menu">
-                <!---->
+            <div class="burger">
+                <i class="fas fa-shopping-cart fa-2x" style="color: #bca0c6;"></i>
             </div>
+            <a id="bv"><i class="fas fa-user-circle"></i> <?php echo $data['pseudo']; ?></a>
+
         </header>
+
+        <nav>
+            <ul>
+                <li><a class="menu_liens" href="deconnexion.php">Se déconnecter</a></li><br>
+
+                <li><a class="menu_liens_panier"><i class="fas fa-caret-right"></i> Panier :</a></li>
+
+                <div style="margin-left:-5px;">
+                    <a id="cart" style="font-size:22px;color:white;">
+                        <!-- <strong>Votre panier :</strong> <br> -->
+                    </a>
+                </div>
+
+                <br>
+
+                <li>
+                    <a class="menu_liens_panier">
+                        <i class="fas fa-caret-right"></i> Total
+                        <span id="total"></span>
+                        <a id="delete"><i class="fas fa-times" style="color: #bca0c6;"></i>
+                        </a>
+                </li>
+
+                <li>
+                    <a>
+                        <button class="btn btn-outline btn_cmd">
+                            Commander
+                        </button>
+                    </a>
+                </li>
+
+                <li id="rs">
+                    <a class="menu_liens">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     <div class="content">
@@ -87,7 +128,7 @@ $data = $req->fetch();
                     <img class="card-img-top" src="../img/img_menu/dej.jpg" />
                     <div class="card-body">
                         <h5 class="card-title">Menu 1</h5>
-                        <a class="shop">
+                        <a class="shop" id="1">
                             <button class="btn btn-rounded btn-dark">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
@@ -101,7 +142,7 @@ $data = $req->fetch();
                     </div>
 
                     <div class="prix_rounded">
-                        <span>3.50€</span>
+                        <span id="prix_1">3.50€</span>
                     </div>
                 </li>
 
@@ -109,7 +150,7 @@ $data = $req->fetch();
                     <img class="card-img-top" src="../img/img_menu/menu.jpg" />
                     <div class="card-body">
                         <h5 class="card-title">Menu 2</h5>
-                        <a class="shop">
+                        <a class="shop" id="2">
                             <button class="btn btn-rounded btn-dark">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
@@ -123,7 +164,7 @@ $data = $req->fetch();
                     </div>
 
                     <div class="prix_rounded">
-                        <span>7.50€</span>
+                        <span id="prix_2">7.50€</span>
                     </div>
                 </li>
 
@@ -131,7 +172,7 @@ $data = $req->fetch();
                     <img class="card-img-top" src="../img/img_menu/soir.jpg" />
                     <div class="card-body">
                         <h5 class="card-title">Menu 3</h5>
-                        <a class="shop">
+                        <a class="shop" id="3">
                             <button class="btn btn-rounded btn-dark">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
@@ -145,7 +186,7 @@ $data = $req->fetch();
                     </div>
 
                     <div class="prix_rounded">
-                        <span>13€</span>
+                        <span id="prix_3">13€</span>
                     </div>
                 </li>
 
@@ -153,7 +194,7 @@ $data = $req->fetch();
                     <img class="card-img-top" src="../img/img_menu/dej2.jpg" />
                     <div class="card-body">
                         <h5 class="card-title">Menu 4</h5>
-                        <a class="shop">
+                        <a class="shop" id="4">
                             <button class="btn btn-rounded btn-dark">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
@@ -167,7 +208,7 @@ $data = $req->fetch();
                     </div>
 
                     <div class="prix_rounded">
-                        <span>4.50€</span>
+                        <span id="prix_4">4.50€</span>
                     </div>
                 </li>
 
@@ -175,7 +216,7 @@ $data = $req->fetch();
                     <img class="card-img-top" src="../img/img_menu/menu2.jpg" />
                     <div class="card-body">
                         <h5 class="card-title">Menu 5</h5>
-                        <a class="shop">
+                        <a class="shop" id="5">
                             <button class="btn btn-rounded btn-dark">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
@@ -189,7 +230,7 @@ $data = $req->fetch();
                     </div>
 
                     <div class="prix_rounded">
-                        <span>7.90€</span>
+                        <span id="prix_5">7.90€</span>
                     </div>
                 </li>
 
@@ -197,7 +238,7 @@ $data = $req->fetch();
                     <img class="card-img-top" src="../img/img_menu/soir2.jpg" />
                     <div class="card-body">
                         <h5 class="card-title">Menu 6</h5>
-                        <a class="shop">
+                        <a class="shop" id="6">
                             <button class="btn btn-rounded btn-dark">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
@@ -211,7 +252,7 @@ $data = $req->fetch();
                     </div>
 
                     <div class="prix_rounded">
-                        <span>12€</span>
+                        <span id="prix_6">12€</span>
                     </div>
                 </li>
             </ul>
@@ -232,11 +273,8 @@ $data = $req->fetch();
         </div>
     </div>
 
-    <script type="text/javascript" src="../js/index.js"></script>
-    <script type="text/javascript" src="../js/parallaxe.js"></script>
-    <!-- vuejs
-    <script type="text/javascript" src="vuejs.js"></script> -->
-
 </body>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="landing.js"></script>
 
 </html>

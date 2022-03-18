@@ -9,3 +9,60 @@
 .shop {
   margin-left: 42.2%;
 }
+
+.menu_liens {
+  margin-left: -5px !important;
+}
+
+#bv {
+  font-size: 25px;
+  letter-spacing: 1.2px;
+}
+.burger {
+  margin-left: -5px !important;
+}
+
+.menu_liens_panier {
+  margin-left: -3px !important;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1.7px;
+  font-size: 24px;
+  font-weight: lighter !important;
+  transition-duration: 0.4s !important;
+}
+.menu_liens_panier:hover {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1.7px;
+  font-size: 24px;
+  font-weight: lighter !important;
+  transition-duration: 0.4s !important;
+}
+nav {
+  background: #222;
+  z-index: 0;
+  top: 0;
+  padding: 20px;
+  padding-top: 80px;
+  height: 2100px;
+  box-sizing: border-box;
+  width: 235px;
+  left: -200px;
+  position: absolute;
+}
+
+#delete {
+  cursor: pointer !important;
+  visibility: hidden;
+}
+.btn_cmd {
+  background-color: #bca0c6 !important;
+  color: white !important;
+  font-size: 17px !important;
+  letter-spacing: 1.6px !important;
+}
+.btn_cmd:hover {
+  background: white !important;
+  color: #bca0c6 !important;
+}
