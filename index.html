@@ -1,113 +1,630 @@
-<!------https://github.com/Labush/JS-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant website</title>
+    <title>Drop 3 - T2</title>
     <link rel="stylesheet" href="style.css">
-    <!--VUEJS-->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <!-- MDBOOSTRAP CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet"
+    />
+    <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300&display=swap" rel="stylesheet">
-
-    <!----MDBOOSTRAP------->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <div class="menu">
-        <header>
-          <div class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <!-- <h1 id="titre">Palais des sens</h1> -->
-        </header>
-
-        <nav>
-          <ul>
-            <li><a class="menu_liens" href="#">Accueil</a></li>
-            <li><a class="menu_liens" href="#">Menus</a></li>
-            <li><a class="menu_liens" href="php/index.php">Se connecter</a></li>
-            <li><a class="menu_liens" href="#">Contact</a></li>
-
-            <li id="rs"><a class="menu_liens" href="#">
-              <i class="fab fa-instagram fa-2x"></i>
-            </a></li>
-          </ul>
-        </nav>
-    </div>
-
-    <div class="content">
-
-      <div class="main">
-        <h2 id="soustitre">Manger sein,<br>manger vite.</h2>
-        <h2 id="soustitre_shadow">Manger sein,<br>manger vite.</h2>
-
-        <div id="accueil">
-          <button class="btn btn" id="call_command">Commander</button>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-white p-4">
+          <h5 class="h4 item_menu">Lorem Ip's</h5>
+          <a class="item_menu" style="color:#F69C12;">Accueil</a>
+          <a class="item_menu item_menu_lien">Menu</a>
+          <a class="item_menu item_menu_lien">Contact</a>
+          <a href="php/index.php" class="item_menu item_menu_lien"
+          style="text-decoration: underline;text-decoration-color:black;text-decoration-thickness:5px;text-underline-offset: 3px;">
+            Se connecter
+          </a>
         </div>
       </div>
-      
+      <nav class="navbar navbar-dark bg-white">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            style="color:#F69C12;"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
 
-      <div id="about">
+      <!----------------------------------------------------------->
 
-        <img id="img_avocat" src="img/avocat.jpg" width="500px" />
-        <h2 id="pres">Notre démarche <i class="fas fa-long-arrow-alt-down"></i></h2>
-        <p id="pres_para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis numquam, sit ex iure assumenda ratione quae itaque laudantium totam iusto vitae aliquid facilis sed suscipit quasi vel doloremque laboriosam.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis numquam, sit ex iure assumenda ratione quae itaque laudantium totam iusto vitae aliquid facilis sed suscipit quasi vel doloremque laboriosam.
-        </p>
+      <div id="accueil">
+          <h1 id="titre">Lorem ipsum lorem<br>adipisicing dolore quas</h1>
+          <br>
+          <a id="subtitre">Lorem ipsum dolor sit amet consectetur<br>
+            quas elit dolore quas assumenda incidunt fugiat</a>
+          <section id="section_btn_accueil">
+              <button class="btn btn-light btn_accueil">En savoir plus</button>
+              <button class="btn btn-light btn_accueil_active">Nos menus</button>
+          </section>
 
+          <img src="images/food_plat2.png" alt="" style="float:right;margin-top:-475px;width:550px;margin-right:120px;
+          transform: rotate(12deg);">
+
+          <section class="rs_barre">
+            <div id="rs_barre_un"></div>
+            <section style="margin-top: -13px;">
+              <a href=""><i class="fab fa-youtube fa-1x icon_rs"></i></a>
+              <a href=""><i class="fab fa-instagram fa-1x icon_rs"></i></a>
+              <a href=""><i class="fab fa-twitter fa-1x icon_rs"></i></a>
+            </section>
+            <div id="rs_barre_deux"></div>
+          </section>
       </div>
 
-      <div class="content_menu">
-        
-        <h2 id="menu_titre">Nos menus <i class="fas fa-long-arrow-alt-down"></i></h2>
+      <!----------------------------------------------------------->
 
-        <div id="app">
-          <ul id="parallaxe">
-            <li class="carte" v-for="item in items">
-              <img v-bind:src="item.photoURL" class="card-img-top"/>
+      <div id="services">
+        <h2 id="titre_service">Comment deguster du <span style="color:#F69C12;">Lorem Ip's</span> ?</h2>
+
+        <!-------------------->
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="section_cartes_services">
+          <div class="col">
+            <div class="card carte_services h-100">
               <div class="card-body">
-                <h5 class="card-title" v-text="item.titre"></h5>
-                <p class="card-text" v-text="item.description"></p>
+
+                <h2><i class="fas fa-utensils" style="color:#262626;font-size:50px;"></i></h2>
                 <br>
+
+                <h5 class="card-title carte_titre_services">Sur place</h5>
+
+                <br>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corrupti at dolor ab voluptas,
+                  repudiandae dolore minus.
+                </p>
               </div>
+            </div>
+          </div>
           
-              <div class="prix_rounded">
-                <span v-text="item.prix"></span>€
+          <div class="col">
+            <div class="card carte_services h-100">
+              <div class="card-body">
+
+                <h2><i class="fas fa-truck" style="color:#262626;font-size:50px;"></i></h2>
+                <br>
+
+                <h5 class="card-title carte_titre_services">Chez vous</h5>
+
+                <br>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corrupti at dolor ab voluptas,
+                  repudiandae dolore minus.
+                </p>
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card carte_services_off h-100">
+              <div class="card-body">
+
+                <h2><i class="fas fa-credit-card" style="color:#F69C12;font-size:50px;"></i></h2>
+                <br>
+
+                <h5 class="card-title carte_titre_services">Paiement en ligne</h5>
+
+                <br>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corrupti at dolor ab voluptas,
+                  repudiandae dolore minus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-------------------->
+
+        <!-- <h1 id="services_down">
+          <i class="fas fa-long-arrow-alt-down" style="color:#F69C12;"></i>
+        </h1> -->
+
+        <br><br><br>
+        <div>
+          <div class="card mb-3" style="width:1140px;height: 450px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="images/restaurant.webp"
+                  alt="Restaurant image"
+                  class="img-fluid rounded-start"
+                  style="height: 450px;width:100% ;"
+                />
+              </div>
+              <div class="col-md-8" style="background-color: #262626;">
+                <div class="card-body">
+                  <h5 class="card-title titre_carte_pres">Horaires</h5>
+                  <p class="card-text texte_carte_pres">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem deserunt voluptatum eveniet maxime
+                    recusandae minima error animi. Necessitatibus distinctio eos culpa explicabo sapiente saepe provident.
+                    Iste commodi doloribus adipisci optio.
+
+                    <br><br>
+                    Lorem ipsum optio frago.
+                    <br><br>
+                    10h - 16h | 19h - 23h50
+                  </p>
+                  <h3 id="itineraire_carte_pres">Voir l'itineraire <i class="fas fa-caret-right"></i></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br><br><br>
+
+      </div>
+
+      <!---------------------------------------------------------------------------->
+      <div id="menus">
+        <br>
+        <h2 id="titre_menus">
+          Nos <span style="color:#F69C12;">menus</span>
+        </h2>
+        <!-------------------->
+
+        <!-- Pills navs -->
+        <ul class="nav nav-pills mb-3" id="ex1" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active btn_pills"
+              id="ex1-tab-1"
+              data-mdb-toggle="pill"
+              href="#ex1-pills-1"
+              role="tab"
+              aria-controls="ex1-pills-1"
+              aria-selected="true"
+              ><i class="fas fa-caret-right"></i> Petit-dejeuner</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link btn_pills"
+              id="ex1-tab-2"
+              data-mdb-toggle="pill"
+              href="#ex1-pills-2"
+              role="tab"
+              aria-controls="ex1-pills-2"
+              aria-selected="false"
+              ><i class="fas fa-caret-right"></i> Dejeuner</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link btn_pills"
+              id="ex1-tab-3"
+              data-mdb-toggle="pill"
+              href="#ex1-pills-3"
+              role="tab"
+              aria-controls="ex1-pills-3"
+              aria-selected="false"
+              ><i class="fas fa-caret-right"></i> Diner</a
+            >
+          </li>
+        </ul>
+        <!-- Pills navs -->
+
+        <!------------------------------------------------------------------------------------>
+        <!------------------------------------------------------------------------------------>
+
+        <!-- Pills content -->
+        <div class="tab-content" id="ex1-content">
+          <div
+            class="tab-pane fade show active"
+            id="ex1-pills-1"
+            role="tabpanel"
+            aria-labelledby="ex1-tab-1"
+          >
+          <!-------- 1 ------------>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/petitdej1.PNG" style="height: 280px;" class="card-img-top" alt="Petit-dejeuner"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      4.50€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/petitdej2.PNG" style="height: 280px;" class="card-img-top" alt="Petit-dejeuner"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      6€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/petitdej3.PNG" style="height: 280px;" class="card-img-top" alt="Petit-dejeuner"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      8.99€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>  
+          <!-------------------->
+          </div>
+
+          <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+            <!-------- 2 ------------>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/midi1.PNG" style="height: 280px;" class="card-img-top" alt="Midi"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      5.50€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/midi2.PNG" style="height: 280px;" class="card-img-top" alt="Midi"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      7€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/midi3.PNG" style="height: 280px;" class="card-img-top" alt="Midi"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      13€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>  
+          <!--------- 3 ----------->
+          </div>
+
+          <div class="tab-pane fade" id="ex1-pills-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+            <!-------------------->
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/soir1.PNG" style="height: 280px;" class="card-img-top" alt="Dîner"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      14.50€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/soir2.PNG" style="height: 280px;" class="card-img-top" alt="Dîner"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      16€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col">
+              <div class="card carte_menus h-100">
+                <img src="images/soir3.PNG" style="height: 280px;" class="card-img-top" alt="Dîner"/>
+                <div class="card-body carte_body_menus">
+                  <h5 class="card-title carte_title_menus">Nom menu</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quia corporis.
+                  </p>
+                  <br>
+                  <p class="carte_prix_menus">
+                    <button class="btn btn-light btn-rounded carte_prix_menus">
+                      11€
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>  
+          <!-------------------->
+          </div>
+        </div>
+        <!-- Pills content -->
+      </div>
+
+      <!-------------------------------------------------------------------------------------------->
+
+      <div id="adj">
+        <h2 id="titre_adj">
+          <i class="fab fa-readme"></i>
+          L'<span style="color:#F69C12;">avis</span> de nos <span style="color:#F69C12;">clients</span>
+        </h2>
+
+        <!------->
+        <div class="row row-cols-1 row-cols-md-3 g-4"
+        style="margin-left: 12%;margin-right: 12%;margin-top:20px;"
+        >
+          <div class="col">
+            <div class="card">
+              <div class="card-body carte_avis">
+                <section style="display:flex;justify-content:center;">
+
+                  <div class="d-inline-flex position-relative">
+                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-dark border border-light rounded-circle"></span>
+                    <img class="rounded-4 shadow-4" src="images/jeanluc.avif" alt="Avatar" style="width: 60px; height: 75px;">
+                  </div>
+                  <h5 class="card-title carte_nom">Jean-Luc</h5>
+
+                </section>
+
+                <br>
+
+                <p class="card-text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius recusandae cumque veritatis debitis animi
+                  obcaecati eligendi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--------------------------------->
+
+          <div class="col">
+            <div class="card">
+              <div class="card-body carte_avis">
+                <section style="display:flex;justify-content:center;">
+
+                  <div class="d-inline-flex position-relative">
+                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-dark border border-light rounded-circle"></span>
+                    <img class="rounded-4 shadow-4" src="images/issa.avif" alt="Avatar" style="width: 60px; height: 75px;">
+                  </div>
+                  <h5 class="card-title carte_nom">Issa</h5>
+
+                </section>
+
+                <br>
+
+                <p class="card-text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius recusandae cumque veritatis debitis animi
+                  obcaecati eligendi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--------------------------------->
+
+          <div class="col">
+            <div class="card">
+              <div class="card-body carte_avis">
+                <section style="display:flex;justify-content:center;">
+
+                  <div class="d-inline-flex position-relative">
+                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-dark border border-light rounded-circle"></span>
+                    <img class="rounded-4 shadow-4" src="images/nathan.avif" alt="Avatar" style="width: 60px; height: 75px;">
+                  </div>
+                  <h5 class="card-title carte_nom">Nathan</h5>
+
+                </section>
+
+                <br>
+
+                <p class="card-text">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius recusandae cumque veritatis debitis animi
+                  obcaecati eligendi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!------->
+      <div class="row row-cols-1 row-cols-md-3 g-4"
+      style="margin-left: 12%;margin-right: 12%;margin-top:20px;"
+      >
+        <div class="col">
+          <div class="card">
+            <div class="card-body carte_avis">
+              <section style="display:flex;justify-content:center;">
+
+                <div class="d-inline-flex position-relative">
+                  <span class="position-absolute top-0 start-100 translate-middle p-1 bg-dark border border-light rounded-circle"></span>
+                  <img class="rounded-4 shadow-4" src="images/maria.jpg" alt="Avatar" style="width: 60px; height: 75px;">
+                </div>
+                <h5 class="card-title carte_nom">Maria</h5>
+
+              </section>
+
+              <br>
+
+              <p class="card-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius recusandae cumque veritatis debitis animi
+                obcaecati eligendi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!--------------------------------->
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body carte_avis">
+              <section style="display:flex;justify-content:center;">
+
+                <div class="d-inline-flex position-relative">
+                  <span class="position-absolute top-0 start-100 translate-middle p-1 bg-dark border border-light rounded-circle"></span>
+                  <img class="rounded-4 shadow-4" src="images/ocean.avif" alt="Avatar" style="width: 60px; height: 75px;">
+                </div>
+                <h5 class="card-title carte_nom">Ocean</h5>
+
+              </section>
+
+              <br>
+
+              <p class="card-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius recusandae cumque veritatis debitis animi
+                obcaecati eligendi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!--------------------------------->
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body carte_avis">
+              <section style="display:flex;justify-content:center;">
+
+                <div class="d-inline-flex position-relative">
+                  <span class="position-absolute top-0 start-100 translate-middle p-1 bg-dark border border-light rounded-circle"></span>
+                  <img class="rounded-4 shadow-4" src="images/stephanie.avif" alt="Avatar" style="width: 60px; height: 75px;">
+                </div>
+                <h5 class="card-title carte_nom">Stephanie</h5>
+
+              </section>
+
+              <br>
+
+              <p class="card-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius recusandae cumque veritatis debitis animi
+                obcaecati eligendi.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div style="height: 600px;">
-
-          <div id="newsletter">
-            <label for="" id="titre_newsletter"><span style="font-weight: bold;">Notre newsletter mensuelle :</span> code-promos et infos !</label>
-            <br><br>
-            <input type="text" style="margin-left: 100px;">
-            <br><br>
-            <button class="btn btn-dark" id="btn_newsletter" type="submit">Je m'inscris !</button>
-          </div>
-
-          <img id="img" src="img/img.jpg" width="500px">
-
-      </div>
     </div>
-   
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/parallaxe.js"></script>
-    <!--vuejs-->
-    <script type="text/javascript" src="js/vuejs.js"></script>
+
+    <div style="height: 770px;margin-top: -50px;border-top:solid 3px #F69C12;">
+      <h1 id="titre_contact">Nous contacter</h1>
+      <br>
+      
+        <form action="">
+          
+          <section id="form_input">
+            <input class="form input" type="text" placeholder="Votre nom">
+            <input class="form input" type="text" placeholder="Votre adresse electronique">
+          </section>
+
+          <textarea class="form" name="" id="" cols="30" rows="10" placeholder="Votre message"></textarea>
+
+          <br>
+          <button class="btn btn-light" id="send_form">Envoyer</button>
+        </form>
+
+        <img src="images/poulet.png" width="400px" style="margin-top:-130px;margin-left: 36.5%;" alt="">
+    </div>
+
+    <footer class="text-center text-white">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);color: #F69C12;
+      font-family: 'Koulen', cursive;letter-spacing: 3px;">
+        © 2022 Copyright
+        <br>
+        <section style="margin-left: -90px;">
+          <a class="text-white" href="politique_de_confidentialite.html" style="margin-right: 150px;">Politique de confidentialite</a>
+          <a class="text-white" href="mentions_legales.html">Mentions legales</a>
+        </section>
+      </div>
+      <!-- Copyright -->
+    </footer>
 </body>
 </html>

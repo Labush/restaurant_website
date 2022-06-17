@@ -1,246 +1,294 @@
-/******https://github.com/Labush/JS******/
-body {
-  margin: 0;
-  font-family: "Khand", sans-serif !important;
-  overflow-x: hidden;
+body{
+    background-image: url('images/background_accueil.jpg');
+    background-size: 100%;
 }
-.menu_liens {
-  text-decoration: none;
-  color: #fff;
-  letter-spacing: 1.7px;
-  font-size: 24px;
-  font-weight: lighter !important;
-  transition-duration: 0.4s !important;
+.navbar{
+    box-shadow: none !important;
 }
-.menu_liens:hover {
-  color: #bca0c6;
-  text-decoration: underline;
-  text-decoration-thickness: 10px;
-  text-underline-offset: -1px;
-  transition-duration: 0.4s !important;
+.item_menu{
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important; 
+    font-size: 20px !important;
 }
-li {
-  margin-top: 15px;
+.item_menu_lien{
+    color: #F69C12 !important;
+    margin-left: 30px !important;
 }
-ul {
-  list-style-type: none;
-}
-header {
-  background: #f6eded;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  box-sizing: border-box;
-}
-/* #titre {
-  color: #bca0c6;
-  letter-spacing: 1.6px;
-  margin-right: 590px;
-  font-weight: bold !important;
-  font-size: 55px;
-  margin-bottom: 0px;
-} */
+#accueil{
+    /* background-image: url('images/background_accueil.jpg');
+    background-size: 100%; */
+    height: 700px;
 
-nav {
-  background: #222;
-  z-index: 0;
-  top: 0;
-  padding: 20px;
-  padding-top: 80px;
-  height: 100%;
-  box-sizing: border-box;
-  width: 235px;
-  left: -200px;
-  position: absolute;
+    padding-left: 100px;
+    padding-top: 100px;
 }
+#titre{
+    font-family: 'Koulen', cursive;
+    color: #F69C12;
+    letter-spacing:5px !important;
+    font-size: 60px !important;
+}
+#subtitre{
+    color: white;
+    font-size: 23px !important;
+}
+#section_btn_accueil{
+    margin-top:65px;
+}
+.btn_accueil{
+    border-radius: 100px !important;
+    letter-spacing: 4px !important;
+    background-color: #F69C12 !important;
+    color: white !important;
+    margin:15px !important;
+    margin-left:-5px !important;
+    font-size: 19px !important;
+    padding: 15px !important;
+    padding-left:35px !important;
+    padding-right: 35px !important;
+    font-family: 'Koulen', cursive !important;
+    border:solid 2px #F69C12 !important;
+}
+.btn_accueil:hover{
+    background-color: transparent !important;
+    color: #F69C12 !important;
+    border:solid 2px #F69C12 !important;
+}
+.btn_accueil_active{
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 4px !important;
+    border-radius: 100px !important;
+    background-color: transparent !important;
+    color: #F69C12 !important;
+    border:solid 2px #F69C12 !important;
+    margin:15px !important;
+    margin-left:35px !important;
+    font-size: 19px !important;
+    padding: 15px !important;
+    padding-left:35px !important;
+    padding-right: 35px !important;
+}
+.btn_accueil_active:hover{
+    background-color: #F69C12 !important;
+    color: white !important;
+    border:solid 2px #F69C12 !important;
+}
+/********************************************************/
+.rs_barre{
+    margin-top:130px;
+    padding-right:100px;
+    display: flex;
+    justify-content: space-between;
+}
+#rs_barre_un{
+    height:2px;
+    width: 500px;
+    background: #fbfbfb;
+}
+#rs_barre_deux{
+    height:2px;
+    width: 500px;
+    background: #fbfbfb;
+}
+.icon_rs{
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #fbfbfb;
+    font-size: 26px !important;
+}
+.icon_rs:hover{
+    color: #F69C12;
+    cursor: pointer;
+}
+/********************************************************/
+#services{
+    height: 720px;
+    /* background-image: url('images/background_accueil.jpg'); */
+    /* background-size: 100%; */
+    margin-bottom: 250px;
 
-#rs {
-  margin-top: 300px;
-  margin-left: 16% !important;
+    margin-left: 12% !important;
+    margin-right: 12% !important;
 }
-
-.burger {
-  z-index: 1;
-  display: relative;
-  cursor: pointer;
+#titre_service{
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    color: white;
+    font-size: 45px;
 }
-.burger span {
-  display: block;
-  width: 30px;
-  height: 4px;
-  background: #bca0c6;
-  margin-bottom: 5px;
+#section_cartes_services{
+    margin-top: 25px !important;
 }
-
-nav.open {
-  left: 0;
+.carte_services{
+    width:350px !important;
+    text-align: center !important;
+    background: #F69C12 !important;
+    color: white !important;
 }
-.burger.open span:nth-child(1) {
-  transform: rotate(41deg) translateY(11px);
+.carte_services_off{
+    width:350px !important;
+    text-align: center !important;
+    background: white !important;
+    color: black !important;
+    border: solid 2px #F69C12 !important;
 }
-.burger.open span:nth-child(2) {
-  opacity: 0;
-  width: 0;
+.carte_titre_services{
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    font-size: 26px !important;
 }
-.burger.open span:nth-child(3) {
-  transform: rotate(-41deg) translateY(-11px);
-}
-
-nav {
-  transition: left ease-in 0.4s;
-}
-.burger span {
-  transition: all ease-in 0.4s;
-}
-
-.main {
-  background-image: url("img/background.jpg");
-  background-size: 100%;
-  width: 100%;
-  height: 675px;
-  /* cursor: pointer; */
-  margin-left: 0;
-  border-bottom: solid 5px black;
-}
-#accueil {
-  text-align: center !important;
-  padding-top: 450px;
-}
-#call_command {
-  font-size: 28px;
-  letter-spacing: 1.5px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-radius: 100px !important;
-  background-color: #f6eded !important;
-  color: black;
-  margin-top: 50px;
-}
-#call_command:hover {
-  background-color: #bca0c6 !important;
-  color: white !important;
-}
-#soustitre {
-  font-weight: bold;
-  color: white;
-  font-size: 45px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-transform: uppercase;
-  float: right;
-  margin-right: 17%;
-  margin-top: 70px;
-  letter-spacing: 2.3px;
-}
-#soustitre_shadow {
-  letter-spacing: 2.3px;
-  font-weight: bold;
-  color: #bca0c6;
-  font-size: 45px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  text-transform: uppercase;
-  float: right;
-  margin-right: -266px !important;
-  margin-top: 70px;
-}
-#about {
-  background-color: #f6eded;
-  height: 500px;
-}
-#img_avocat {
-  margin: 85px;
-  margin-left: 175px;
-}
-#pres {
-  float: right;
-  margin-top: 90px;
-  margin-right: 250px;
-  color: #bca0c6;
-  letter-spacing: 1.1px;
-  font-size: 50px;
-}
-#pres_para {
-  float: right;
-  margin-top: -300px;
-  margin-right: 70px;
-  width: 600px;
-  font-size: 22px;
-  color: black;
+#services_down{
+    margin-top: 35px;
+    margin-left:14.2% !important;
+    color: black;
 }
 /****/
-.content_menu {
-  height: 1100px;
+.titre_carte_pres{
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    font-size: 60px !important;
+    color: white;
 }
-#menu_titre {
-  color: black;
-  font-size: 70px;
-  text-align: center;
-  margin-top: 70px;
+.texte_carte_pres{
+    /* font-family: 'Koulen', cursive !important;
+    letter-spacing: 2px !important; */
+    color: white;
 }
-.card-title {
-  text-align: center !important;
-  font-weight: bold;
-  font-size: 27px !important;
-}
-.prix_rounded {
-  background-color: #bca0c6;
-  color: #f6eded;
-  border: solid 7px #f6eded;
-  border-radius: 100px;
-  width: 90px;
-  height: 90px;
-  padding-top: 19px;
-  text-align: center;
-  margin-left: 10.5%;
-  letter-spacing: 1px;
-  font-size: 22px;
-
-  margin-top: -50px;
-  z-index: 1 !important;
-  position: absolute;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.card-img-top {
-  height: 280px !important;
-}
-.carte {
-  margin-bottom: 50px;
-  margin-top: 70px !important;
-  margin-left: 4.5% !important;
-  float: left;
-
-  width: 400px !important;
-  padding: 0 !important;
-  color: black !important;
-  font-size: 130% !important;
-  background-color: #f6eded !important;
-}
-#app {
-  margin-top: -35px;
-}
-#img {
-  float: right;
-  margin-top: 75px;
-  margin-right: 125px;
+#itineraire_carte_pres{
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    font-size: 21px !important;
+    color: #F69C12;
+    text-align: center;
+    margin-top: 60px;
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 7px;
+    text-underline-offset: 3px;
 }
 
-#newsletter {
-  float: left;
-  margin-left: 130px;
-  margin-top: 250px;
+/***************************************/
+#menus{
+    height: 720px;
+    margin-left: 12% !important;
+    margin-right: 12% !important;
+    margin-bottom: 75px;
 }
-input {
-  border-radius: 15px;
-  width: 300px;
-  height: 35px;
-  border: solid 3px #bca0c6;
+#titre_menus{
+    /* text-align: center; */
+    margin-top: 70px;
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    color: white;
+    font-size: 55px;
 }
-#titre_newsletter {
-  font-size: 30px;
+.btn_pills{
+    background-color: white !important;
+    color: #F69C12 !important;
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    font-size: 23px !important;
+    
 }
-#btn_newsletter {
-  margin-left: 170px !important;
-  font-size: 22px !important;
+.nav{
+    margin-top: 20px !important;
+    /* justify-content: center !important; */
+}
+.carte_menus{
+    height: 200px !important;
+    width: 350px !important;
+}
+.carte_body_menus{
+    background-color: #F69C12 !important;
+    border-bottom-right-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    color: white !important;
+
+    height: 180px !important;
+}
+.carte_title_menus{
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 2px !important;
+    font-size: 23px !important;
+}
+.carte_prix_menus{
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 2px !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    color: black !important;
+    margin-bottom: 0px !important;
+}
+/***************************************************/
+#titre_adj{
+    color: white !important;
+    margin-left: 13% !important;
+    padding-top: 50px !important;
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    font-size: 50px;
+}
+.carte_nom{
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    font-size: 30px;
+    color: #F69C12 !important;
+    margin-left: 25px !important;
+    margin-top: 25px !important;
+}
+.carte_avis{
+    background-color:#fbfbfb !important;
+    border: solid 2px #F69C12 !important;
+}
+/****************************************************/
+.form{
+    border: solid 3px #F69C12 !important;
+    /* background-image: url('images/background_accueil.jpg');
+    background-size: 100%; */
+    background-color: white !important;
+    color: black !important;
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 4px !important;
+    font-size: 17px;
+}
+::placeholder{
+    color: black !important;
+}
+#form_input{
+    display: flex !important;
+    justify-content: center !important;
+}
+.input{
+    width: 350px !important;
+    margin: 15px;
+    padding-left: 10px;
+    padding: 10px !important;
+}
+textarea{
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 730px;
+    margin-left: 26% !important;
+    height: 200px !important;
+}
+#send_form{
+    margin-left: 65.8% !important;
+    border-radius: 1px !important;
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    font-size: 17px !important;
+    background-color: #F69C12 !important;
+    color: #fbfbfb !important;
+}
+#titre_contact{
+    color: #F69C12 !important;
+    text-align: center;
+    padding-top: 50px !important;
+    font-family: 'Koulen', cursive !important;
+    letter-spacing: 3px !important;
+    font-size: 60px;
+
+    margin-top: 70px;
 }
