@@ -1,5 +1,5 @@
 #bg-left {
-  background-color: #f6eded;
+  background-color: #F69C12;
   width: 50%;
   height: 720px;
 }
@@ -13,27 +13,28 @@
 }
 /*********/
 .login-form {
-  background: #ce6d6d;
+  background: white;
+  border:solid 3px black;
   padding: 30px;
 
   height: 580px;
   width: 480px;
-  box-shadow: 14px -12px #bca0c6;
+  box-shadow: 14px -12px black;
 
   margin-left: 34%;
   margin-top: -650px;
 }
 #connect {
-  color: white;
+  color: #F69C12;
   text-transform: uppercase;
-  font-size: 22px;
-  letter-spacing: 2px;
+  font-size: 25px;
   margin-left: 32px;
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 4px;
-  text-decoration-color: #bca0c6;
-  font-family: "Alata", sans-serif;
+  text-decoration-color: black;
+  letter-spacing: 5px;
+  font-family: 'Koulen', cursive !important;
 
   margin-top: 45px;
   margin-bottom: 75px;
@@ -45,7 +46,7 @@
 }
 
 .form-control {
-  background-color: #ce6d6d;
+  background-color: #F69C12;
   border: none;
   border-bottom: solid 3px white;
 }
@@ -53,51 +54,54 @@
   margin-bottom: 10px;
   margin-left: 2px;
 
-  color: #f3caca;
+  color: black;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-family: "Alata", sans-serif;
-  font-size: 13px;
+  letter-spacing: 5px;
+  font-family: 'Koulen', cursive !important;
+  font-size: 16px;
 }
 .fa-caret-right {
-  color: white !important;
+  color: black !important;
 }
 .btn {
-  margin-top: 60px;
-  background-color: #bca0c6;
-  color: white;
-  letter-spacing: 2px;
-  font-family: "Alata", sans-serif;
-  font-size: 19px;
+  margin-top: 30px;
+  background-color: black;
+  color: #F69C12;
+  letter-spacing:5px;
+  font-family: 'Koulen', cursive !important;
+  font-size: 22px;
   padding-top: 15px;
   padding-bottom: 15px;
   border-radius: 1px;
   margin-left: 60px;
+  border-bottom: solid 5px #F69C12;
 }
 .btn:hover {
-  background-color: #bca0c6;
-  color: grey;
+  background-color: black;
+  color: #F69C12;
+  background-color: #F69C12;
+  color: white;
 }
 
 /*****/
 
 #redirect_inscription {
   float: right;
-  margin-top: -114px;
+  margin-top: -120px;
 
   color: white;
   text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 2px;
+  font-size: 16px;
+  letter-spacing: 5px;
   margin-left: 41px;
-  font-family: "Alata", sans-serif;
+  font-family: 'Koulen', cursive !important;
 
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 4px;
-  text-decoration-color: #ce6d6d;
+  text-decoration-color: black;
 
-  background-color: #bca0c6;
+  background-color: #F69C12;
   padding: 22px;
 }
 

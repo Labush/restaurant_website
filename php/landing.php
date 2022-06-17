@@ -1,16 +1,18 @@
 <?php
 session_start();
 require_once 'config.php';
-// redirection vers index.php si essai d'accès à landing sans être connecté
-if (!isset($_SESSION['user'])) {
-    header('Location:index.php');
-    die();
+// dans le cas où un visiteur tente d'accéder à landing page sans être connecté
+if (!isset($_SESSION['user'])) { // si la donnée de $_SESSION['user'] n'existe pas alors (c-à-d visiteur pas connecté)
+    header('Location:index.php'); // on redirige le visiteur vers index.php (=> page de connexion pour qu'il se connecte)
+    die(); // stoper le script pour pas continuer sur le code en-dessous :
 }
 
-// On récupere les données de l'utilisateur
-$req = $bdd->prepare('SELECT * FROM utilisateurs WHERE token = ?');
+// On récupere les données de l'utilisateur qui se connecte
+$req = $bdd->prepare('SELECT * FROM utilisateurs WHERE token = ?'); // ? = valeur passée à la requête
+// ici on execute la requête SQL contenue dans $req avec la fonction execute()
 $req->execute(array($_SESSION['user']));
-$data = $req->fetch();
+$data = $req->fetch(); // on parcourt les lignes du tableau contenu dans le variable $req avec fetch()
+// en fait : fetch() vient récupérer les résultats ligne par ligne, sous forme de array | stockés dans $ data.
 
 ?>
 <!doctype html>
@@ -20,7 +22,6 @@ $data = $req->fetch();
     <title>Mon compte</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="landing.css">
     <!--VUEJS-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
@@ -32,249 +33,183 @@ $data = $req->fetch();
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- <div class="text-center">
-        <h1 class="p-5">Bonjour <?php echo $data['pseudo']; ?> !</h1>
-        <a href="deconnexion.php" class="btn btn-danger btn-lg">Déconnexion</a>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-white p-4">
+            <!-- <h5 class="text-dark item_menu h4">Lorem Ip's</h5> -->
+            <a class="text-dark item_menu" style="text-transform:capitalize;">
+                <i class="fas fa-user-circle"></i> <?php echo $data['pseudo']; ?>
+            </a>
 
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#change_password">
-            Changer mon mot de passe
-        </button>
-    </div> -->
+            <a href="index.php" class="item_menu item_menu_lien" style="text-decoration: underline;text-decoration-color:black;text-decoration-thickness:5px;text-underline-offset: 3px;">
+                Se deconnecter
+            </a>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-white">
+        <div class="container-fluid">
+            <button class="navbar-toggler" style="color:#F69C12;" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-    <div class="menu">
-        <header>
-            <div class="burger">
-                <i class="fas fa-shopping-cart fa-2x" style="color: #bca0c6;"></i>
-            </div>
-            <a id="bv"><i class="fas fa-user-circle"></i> <?php echo $data['pseudo']; ?></a>
+    <!----------------------------------------------------------->
 
-        </header>
+    <!-------------------------------------------------------------------------------------------->
+    <div id="app">
+        <br>
+        <h2 id="titre_menus">
+            Nos <span style="color:#F69C12;">menus</span>
+        </h2>
+        <!-------------------->
 
-        <nav>
-            <ul>
-                <li><a class="menu_liens" href="deconnexion.php">Se déconnecter</a></li><br>
+        <!-- Pills navs -->
+        <ul class="nav nav-pills mb-3" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active btn_pills" id="ex1-tab-1" data-mdb-toggle="pill" href="#ex1-pills-1" role="tab" aria-controls="ex1-pills-1" aria-selected="true"><i class="fas fa-caret-right"></i> Petit-dejeuner</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link btn_pills" id="ex1-tab-2" data-mdb-toggle="pill" href="#ex1-pills-2" role="tab" aria-controls="ex1-pills-2" aria-selected="false"><i class="fas fa-caret-right"></i> Dejeuner</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link btn_pills" id="ex1-tab-3" data-mdb-toggle="pill" href="#ex1-pills-3" role="tab" aria-controls="ex1-pills-3" aria-selected="false"><i class="fas fa-caret-right"></i> Diner</a>
+            </li>
+        </ul>
+        <!-- Pills navs -->
 
-                <li><a class="menu_liens_panier"><i class="fas fa-caret-right"></i> Panier :</a></li>
+        <!------------------------------------------------------------------------------------>
+        <!------------------------------------------------------------------------------------>
 
-                <div style="margin-left:-5px;">
-                    <a id="cart" style="font-size:22px;color:white;">
-                        <!-- <strong>Votre panier :</strong> <br> -->
-                    </a>
+        <!-- Pills content -->
+        <div class="tab-content" id="ex1-content">
+            <div class="tab-pane fade show active" id="ex1-pills-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+                <!-------- 1 ------------>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                    <section v-for="Petitdejeuner in Petitdejeuners">
+
+                        <div class="col">
+                            <div class="card carte_menus h-100">
+                                <img v-bind:src="Petitdejeuner.photoURL" style="height: 280px;" class="card-img-top" alt="Petit-dejeuner" />
+                                <div class="card-body carte_body_menus">
+                                    <h5 class="card-title carte_title_menus">
+                                        {{ Petitdejeuner.name }}
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ Petitdejeuner.description }}
+                                    </p>
+                                    <br>
+                                    <p class="carte_prix_menus">
+                                        <button class="btn btn-light btn-rounded carte_prix_menus">
+                                            {{ Petitdejeuner.prix }}€
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
                 </div>
-
-                <br>
-
-                <li>
-                    <a class="menu_liens_panier">
-                        <i class="fas fa-caret-right"></i> Total
-                        <span id="total"></span>
-                        <a id="delete"><i class="fas fa-times" style="color: #bca0c6;"></i>
-                        </a>
-                </li>
-
-                <li>
-                    <a>
-                        <button class="btn btn-outline btn_cmd">
-                            Commander
-                        </button>
-                    </a>
-                </li>
-
-                <li id="rs">
-                    <a class="menu_liens">
-                        <i class="fab fa-instagram fa-2x"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="content">
-
-        <div class="content_menu">
-            <h2 id="menu_titre">Nos menus <i class="fas fa-long-arrow-alt-down"></i></h2>
-            <br>
-
-            <!-- <div id="app">
-                <ul id="parallaxe">
-                    <li class="carte" :key="item.id" v-for="item in items">
-                        <img v-bind:src="item.photoURL" class="card-img-top" />
-                        <div class="card-body">
-                            <h5 class="card-title" v-text="item.titre"></h5>
-                            <a class="shop">
-                                <button class="btn btn-rounded btn-dark">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </button>
-                            </a>
-                            <br><br>
-
-                            <p class="card-text" v-text="item.description"></p>
-                            <br>
-                        </div>
-
-                        <div class="prix_rounded">
-                            <span v-text="item.prix"></span>€
-                        </div>
-                    </li>
-                </ul>
-            </div> -->
-
-            <ul id="parallaxe">
-                <li class="carte">
-                    <img class="card-img-top" src="../img/img_menu/dej.jpg" />
-                    <div class="card-body">
-                        <h5 class="card-title">Menu 1</h5>
-                        <a class="shop" id="1">
-                            <button class="btn btn-rounded btn-dark">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </a>
-                        <br><br>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit ipsum vouptarum amet consectetur adipisicing elit.
-                        </p>
-                        <br>
-                    </div>
-
-                    <div class="prix_rounded">
-                        <span id="prix_1">3.50€</span>
-                    </div>
-                </li>
-
-                <li class="carte">
-                    <img class="card-img-top" src="../img/img_menu/menu.jpg" />
-                    <div class="card-body">
-                        <h5 class="card-title">Menu 2</h5>
-                        <a class="shop" id="2">
-                            <button class="btn btn-rounded btn-dark">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </a>
-                        <br><br>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit ipsum vouptarum amet consectetur adipisicing elit.
-                        </p>
-                        <br>
-                    </div>
-
-                    <div class="prix_rounded">
-                        <span id="prix_2">7.50€</span>
-                    </div>
-                </li>
-
-                <li class="carte">
-                    <img class="card-img-top" src="../img/img_menu/soir.jpg" />
-                    <div class="card-body">
-                        <h5 class="card-title">Menu 3</h5>
-                        <a class="shop" id="3">
-                            <button class="btn btn-rounded btn-dark">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </a>
-                        <br><br>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit ipsum vouptarum amet consectetur adipisicing elit.
-                        </p>
-                        <br>
-                    </div>
-
-                    <div class="prix_rounded">
-                        <span id="prix_3">13€</span>
-                    </div>
-                </li>
-
-                <li class="carte">
-                    <img class="card-img-top" src="../img/img_menu/dej2.jpg" />
-                    <div class="card-body">
-                        <h5 class="card-title">Menu 4</h5>
-                        <a class="shop" id="4">
-                            <button class="btn btn-rounded btn-dark">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </a>
-                        <br><br>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit ipsum vouptarum amet consectetur adipisicing elit.
-                        </p>
-                        <br>
-                    </div>
-
-                    <div class="prix_rounded">
-                        <span id="prix_4">4.50€</span>
-                    </div>
-                </li>
-
-                <li class="carte">
-                    <img class="card-img-top" src="../img/img_menu/menu2.jpg" />
-                    <div class="card-body">
-                        <h5 class="card-title">Menu 5</h5>
-                        <a class="shop" id="5">
-                            <button class="btn btn-rounded btn-dark">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </a>
-                        <br><br>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit ipsum vouptarum amet consectetur adipisicing elit.
-                        </p>
-                        <br>
-                    </div>
-
-                    <div class="prix_rounded">
-                        <span id="prix_5">7.90€</span>
-                    </div>
-                </li>
-
-                <li class="carte">
-                    <img class="card-img-top" src="../img/img_menu/soir2.jpg" />
-                    <div class="card-body">
-                        <h5 class="card-title">Menu 6</h5>
-                        <a class="shop" id="6">
-                            <button class="btn btn-rounded btn-dark">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </a>
-                        <br><br>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit ipsum vouptarum amet consectetur adipisicing elit.
-                        </p>
-                        <br>
-                    </div>
-
-                    <div class="prix_rounded">
-                        <span id="prix_6">12€</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div style="height: 600px;">
-
-            <div id="newsletter">
-                <label for="" id="titre_newsletter"><span style="font-weight: bold;">Notre newsletter mensuelle :</span> code-promos et infos !</label>
-                <br><br>
-                <input type="text" style="margin-left: 100px;">
-                <br><br>
-                <button class="btn btn-dark" id="btn_newsletter" type="submit">Je m'inscris !</button>
+                <!-------------------->
             </div>
 
-            <img id="img" src="../img/img.jpg" width="500px">
+            <div class="tab-pane fade" id="ex1-pills-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                <!-------- 2 ------------>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
 
+                    <section v-for="Dejeuner in Dejeuners">
+
+                        <div class="col">
+                            <div class="card carte_menus h-100">
+                                <img v-bind:src="Dejeuner.photoURL" style="height: 280px;" class="card-img-top" alt="Dejeuner" />
+                                <div class="card-body carte_body_menus">
+                                    <h5 class="card-title carte_title_menus">
+                                        {{ Dejeuner.name }}
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ Dejeuner.description }}
+                                    </p>
+                                    <br>
+                                    <p class="carte_prix_menus">
+                                        <button class="btn btn-light btn-rounded carte_prix_menus">
+                                            {{ Dejeuner.prix }}€
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+                <!--------- 3 ----------->
+            </div>
+
+            <div class="tab-pane fade" id="ex1-pills-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+                <!-------------------->
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                    <section v-for="Diner in Diners">
+
+                        <div class="col">
+                            <div class="card carte_menus h-100">
+                                <img v-bind:src="Diner.photoURL" style="height: 280px;" class="card-img-top" alt="Diner" />
+                                <div class="card-body carte_body_menus">
+                                    <h5 class="card-title carte_title_menus">
+                                        {{ Diner.name }}
+                                    </h5>
+                                    <p class="card-text">
+                                        {{ Diner.description }}
+                                    </p>
+                                    <br>
+                                    <p class="carte_prix_menus">
+                                        <button class="btn btn-light btn-rounded carte_prix_menus">
+                                            {{ Diner.prix }}€
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+                <!-------------------->
+            </div>
         </div>
+        <!-- Pills content -->
     </div>
+
+    <!-------------------------------------------------------------------------------------------->
+
+
+    <footer class="text-center text-white">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);color: #F69C12;
+      font-family: 'Koulen', cursive;letter-spacing: 3px;">
+            © 2022 Copyright
+            <br>
+            <section style="margin-left: -90px;">
+                <a class="text-white" href="../politique_de_confidentialite.html" style="margin-right: 150px;">Politique de confidentialite</a>
+                <a class="text-white" href="../mentions_legales.html">Mentions legales</a>
+            </section>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
 
 </body>
 <script type="text/javascript" src="../js/index.js"></script>
 <script type="text/javascript" src="landing.js"></script>
+<script type="text/javascript" src="../js/vuejs.js"></script>
 
 </html>

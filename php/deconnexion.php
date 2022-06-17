@@ -1,5 +1,5 @@
 <?php
-session_start(); // demarrage de la session
-session_destroy(); // on détruit la/les session(s)
-header('Location:index.php'); // On redirige
+session_start();
+session_destroy(); // La session est détruite, l'utilisateur est déconnecté
+header('Location:index.php'); // on le renvoie vers index.php (= form de connexion)
 die();

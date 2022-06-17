@@ -10,10 +10,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
-    <!---- FONT --->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
 
 
     <title>Connexion</title>
@@ -61,18 +61,27 @@
         </div>
 
         <form action="connexion.php" method="post">
+            <a href="../index.html" class="text-dark">
+                <i class="fas fa-bars fa-2x"></i>
+            </a>
             <h2 id="connect">Se connecter</h2>
+
             <a href=" inscription.php">
                 <h2 id="redirect_inscription" style="cursor: pointer;"><i class="fas fa-caret-right"></i> S'inscrire</h2>
             </a>
+
+            <!---------------------->
+
             <div class="form-group">
                 <label class="label-log" for=""><i class="fas fa-caret-right"></i> Adresse e-mail</label>
                 <input type="email" name="email" class="form-control" required="required" autocomplete="off">
             </div>
+
             <div class="form-group">
                 <label class="label-log" for=""><i class="fas fa-caret-right"></i> Mot de passe</label>
                 <input type="password" name="password" class="form-control" required="required" autocomplete="off">
             </div>
+
             <div class="form-group">
                 <a href="" type="submit">
                     <button type="submit" class="btn btn-outline btn-block">Connexion</button>
